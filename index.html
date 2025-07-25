@@ -1,49 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sunil Bastola - AI Engineer Personal Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header>
-    <h1>Sunil Bastola</h1>
-    <p>Python Developer | AI | Pytorch | LLMS </p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sunil Bastola - AI Engineer Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen justify-between">
+    <header class="bg-white shadow-md sticky top-0 z-10">
+      <div class="max-w-3xl mx-auto px-6 py-6 flex flex-col items-center">
+        <h1 class="text-3xl font-extrabold tracking-tight mb-2">Sunil Bastola</h1>
+        <p class="text-lg text-blue-600 font-medium">Python Developer &middot; AI &middot; PyTorch &middot; LLMs</p>
+        <nav class="mt-4 flex gap-6">
+          <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+          <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+          <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <main class="flex-1 max-w-3xl mx-auto px-6 py-10 flex flex-col gap-16">
+      <section id="about">
+        <h2 class="text-2xl font-bold mb-4 text-blue-800">About Me</h2>
+        <p class="leading-relaxed text-gray-700 text-lg">
+          Hello! I'm a passionate developer deeply engaged in the AI community,
+          focused on transforming complex problems into elegant, intuitive solutions.
+          I enjoy building robust and beautiful applications that make an impact.
+        </p>
+      </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I'm a passionate developer who loves building things and contributing to the AI community. I enjoy turning complex problems into simple, beautiful, and intuitive solutions.</p>
-  </section>
+      <section id="projects">
+        <h2 class="text-2xl font-bold mb-4 text-blue-800">Projects</h2>
+        <ul class="space-y-6">
+          <li class="bg-white rounded-lg shadow p-5">
+            <h3 class="font-semibold text-lg text-blue-700">Project One</h3>
+            <p class="text-gray-700 mt-2">A brief description of what this project is and what technologies you used.</p>
+          </li>
+          <li class="bg-white rounded-lg shadow p-5">
+            <h3 class="font-semibold text-lg text-blue-700">Project Two</h3>
+            <p class="text-gray-700 mt-2">A second project description with tools or languages used.</p>
+          </li>
+          <!-- More projects can be added here -->
+        </ul>
+      </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <strong>Project One</strong> - A brief description of what this project is and what technologies you used.
-      </li>
-      <li>
-        <strong>Project Two</strong> - A second project description with tools or languages used.
-      </li>
-      <!-- Add more projects as needed -->
-    </ul>
-  </section>
+      <section id="contact">
+        <h2 class="text-2xl font-bold mb-4 text-blue-800">Contact Me</h2>
+        <div class="flex flex-col gap-2 text-lg">
+          <p>
+            <span class="font-medium">Email:</span>
+            <a href="mailto:sunil.bastola@students.mq.edu.au"
+               class="text-blue-600 hover:underline">
+              sunil.bastola@students.mq.edu.au
+            </a>
+          </p>
+          <p>
+            <span class="font-medium">GitHub:</span>
+            <a href="https://github.com/sunilbastola" target="_blank"
+               class="text-blue-600 hover:underline">
+              github.com/sunilbastola
+            </a>
+          </p>
+        </div>
+      </section>
+    </main>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:sunil.bastola@students.mq.edu.au">firstname.lastname@students.mq.edu.au</a></p>
-    <p>GitHub: <a href="https://github.com/sunilbastola" target="_blank">github.com/sunilbastola</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Sunil Bastola</p>
-  </footer>
-</body>
+    <footer class="bg-white py-4 border-t mt-10">
+      <div class="text-center text-gray-500 text-sm">&copy; 2025 Sunil Bastola</div>
+    </footer>
+  </body>
 </html>
