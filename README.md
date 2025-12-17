@@ -10,8 +10,6 @@ A modern, responsive personal portfolio built as a static site (no build step). 
 - **Font Awesome**: Icons
 - **Google Fonts**: Typography (Poppins, Raleway)
 
-> Note: TailwindCSS is not required for this repository’s current build (it’s pure HTML/CSS). If you want a Tailwind version, I can convert the styles.
-
 ### Features
 
 - **Modern card-based layout** (Skills / Projects / Education / Leadership / References)
