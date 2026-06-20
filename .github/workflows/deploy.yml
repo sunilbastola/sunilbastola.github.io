@@ -28,7 +28,7 @@ jobs:
       - name: Fetch resume
         run: |
           mkdir -p public/resume
-          curl -fsSL https://raw.githubusercontent.com/alexandersumer/resume/main/index.html -o public/resume/index.html
+          curl -fsSL https://raw.githubusercontent.com/sunilbastola/resume/main/index.html -o public/resume/index.html
       - run: npm run build
       - run: npm test
       - uses: actions/upload-pages-artifact@v3
