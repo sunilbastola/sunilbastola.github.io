@@ -1,0 +1,59 @@
+---
+import '@fontsource-variable/inter';
+import '@fontsource-variable/lora';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ThemeInit from '../components/ThemeInit.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: string;
+}
+
+const {
+  title,
+  description = 'Sunil Bastola — writing about what matters.',
+  image,
+  type = 'website',
+} = Astro.props;
+const fullTitle = title === 'Sunil Bastola' ? title : `${title} — Sunil Bastola`;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const ogImage = image ? new URL(image, Astro.site).href : new URL('/og-image.jpg', Astro.site).href;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{fullTitle}</title>
+    <link rel="canonical" href={canonicalUrl.href} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl.href} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Sunil Bastola" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <ThemeInit />
+  </head>
+  <body>
+    <slot name="before-header" />
+    <Header />
+    <main class="site-main">
+      <slot />
+    </main>
+    <slot name="after-main" />
+    <Footer />
+  </body>
+</html>

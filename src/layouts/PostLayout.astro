@@ -1,0 +1,40 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import ReadingProgress from '../components/ReadingProgress.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import { formatDate, isoDate } from '../utils/format';
+import type { Heading } from '../types';
+
+interface Props {
+  title: string;
+  date: Date;
+  description: string;
+  headings: Heading[];
+}
+
+const { title, date, description, headings } = Astro.props;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  datePublished: isoDate(date),
+  author: { '@type': 'Person', name: 'Sunil Bastola', url: 'https://sunilbastola.github.io' },
+  url: new URL(Astro.url.pathname, Astro.site).href,
+};
+---
+
+<BaseLayout title={title} description={description} type="article">
+  <Fragment slot="before-header">
+    <ReadingProgress />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+  <article>
+    <h1 class="post-title">{title}</h1>
+    <p class="post-meta">
+      <time datetime={isoDate(date)}>{formatDate(date)}</time>
+    </p>
+    <slot />
+  </article>
+  {headings.length >= 3 && <TableOfContents headings={headings} slot="after-main" />}
+</BaseLayout>

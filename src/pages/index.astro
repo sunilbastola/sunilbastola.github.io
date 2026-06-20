@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostList from '../components/PostList.astro';
+import { getCollection } from 'astro:content';
+import profilePhoto from '../assets/sunilbastola.jpeg';
+import { sortPosts } from '../utils/format';
+
+const posts = sortPosts(await getCollection('blog', ({ data }) => !data.draft));
+---
+
+<BaseLayout title="Sunil Bastola">
+  <div class="home-bio">
+    <Image src={profilePhoto} alt="Sunil Bastola" class="home-photo" width={264} height={264} />
+    <p class="summary-text">
+      Hi, I’m <strong>Sunil Bastola</strong>. Welcome to my page.
+      <br>
+      I’m interested in <strong>Science, Engineering, AI, Philosophy and Startups</strong>, and I use this page to reflect on the things I’m learning, questioning, and thinking about.
+    </p>
+  </div>
+
+  <nav class="home-links">
+    <a href="https://github.com/sunilbastola" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/sunilbastola" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://x.com" target="_blank" rel="noopener">X</a>
+    <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+  </nav>
+
+  <h2 class="home-section-title">Writing</h2>
+  <PostList posts={posts} />
+</BaseLayout>
