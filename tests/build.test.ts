@@ -41,7 +41,7 @@ describe.skipIf(!hasDist)('Build output', () => {
     });
 
     it('has bio text', () => {
-      expect($('.home-bio').text()).toContain("Hi, I’m Sunil Bastola");
+      expect($('.home-bio').text()).toContain('Hi, I’m Sunil Bastola');
     });
 
     it('linkedin link is external with noopener', () => {
