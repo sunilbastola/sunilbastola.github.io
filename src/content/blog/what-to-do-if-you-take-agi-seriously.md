@@ -2,7 +2,7 @@
 title: 'What to Do If You Take AGI Seriously'
 date: 2026-05-03
 description: 'A map of where AI is heading and a framework for making good decisions under deep uncertainty without needing to predict the timeline.'
-draft: true
+draft: false
 ---
 
 I was trying to figure out what to do with my career if I take transformative AI seriously. The optimists say AI will augment you, not replace you. The pessimists say it's already too late. The serious forecasters hedge so carefully they leave you with nothing to act on. The practical advice is either shallow ('learn to prompt'), perishable ('master this specific tool'), or aimed at a tiny elite ('get a job at a frontier lab'). None of it tells a normal person how to **make decisions under deep uncertainty**, or how to act without needing to get the timeline right. So I tried to build that for myself.

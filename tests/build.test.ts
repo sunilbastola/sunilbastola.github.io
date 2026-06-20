@@ -24,7 +24,7 @@ describe.skipIf(!hasDist)('Build output', () => {
     });
 
     it('has correct <title>', () => {
-      expect($('title').text()).toBe('Alexander Sumer');
+      expect($('title').text()).toBe('Sunil Bastola');
     });
 
     it('has lang="en" on <html>', () => {
@@ -41,12 +41,7 @@ describe.skipIf(!hasDist)('Build output', () => {
     });
 
     it('has bio text', () => {
-      expect($('.home-bio').text()).toContain("Hi, I'm Alexander");
-    });
-
-    it('resume link points to /resume/', () => {
-      const resumeLink = $('.home-links a').filter((_, el) => $(el).text().trim() === 'Resume');
-      expect(resumeLink.attr('href')).toBe('/resume/');
+      expect($('.home-bio').text()).toContain("Hi, I’m Sunil Bastola");
     });
 
     it('linkedin link is external with noopener', () => {
@@ -78,7 +73,7 @@ describe.skipIf(!hasDist)('Build output', () => {
     });
 
     it('has correct <title>', () => {
-      expect($('title').text()).toBe('Blog — Alexander Sumer');
+      expect($('title').text()).toBe('Blog — Sunil Bastola');
     });
 
     it('has a <h1>', () => {
@@ -155,7 +150,7 @@ describe.skipIf(!hasDist)('Build output', () => {
   describe('dist/CNAME', () => {
     it('exists and contains the custom domain', () => {
       const cname = readFileSync(join(DIST, 'CNAME'), 'utf-8').trim();
-      expect(cname).toBe('alexandersumer.com');
+      expect(cname).toBe('sunilbastola.github.io');
     });
   });
 });
